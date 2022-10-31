@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acl_sale_order_limit,access_sale_order_limit,model_sale_order_limit,base.group_user,1,1,1,1
+acl_agent_limit,access_agent_limit,model_agent_limit,base.group_user,1,1,1,1
+acl_accountant_report,access_accountant_report,model_accountant_report,base.group_user,1,1,1,1
+acl_report_month,access_report_month,model_report_month,base.group_user,1,1,1,1

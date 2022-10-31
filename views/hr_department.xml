@@ -1,0 +1,16 @@
+<odoo>
+    <!-- Inherit Form View to Modify it -->
+    <record id="test_purchase_hr_department" model="ir.ui.view">
+        <field name="name">test purchase hr department</field>
+        <field name="model">hr.department</field>
+        <field name="inherit_id" ref="hr.view_department_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//sheet//group//field[@name='manager_id']" position="after">
+                <field name="monthly_spending_limit"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

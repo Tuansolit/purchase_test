@@ -1,0 +1,40 @@
+<odoo>
+    <record id="report_month_view_tree" model="ir.ui.view">
+        <field name="name">report_month_view_tree</field>
+        <field name="model">report.month</field>
+        <field name="arch" type="xml">
+            <tree string="report_month_tree">
+                <field name="department_id"/>
+                <field name="spending_limit"/>
+                <field name="actual_spending"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="report_month_view_form" model="ir.ui.view">
+        <field name="name">report_month_view_form</field>
+        <field name="model">report.month</field>
+        <field name="arch" type="xml">
+            <form string="_form">
+                <sheet>
+                    <group>
+                        <field name="department_id"/>
+                    </group>
+                    <group>
+                        <field name="spending_limit"/>
+                    </group>
+                    <group>
+                        <field name="actual_spending"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="report_month_act_window" model="ir.actions.act_window">
+        <field name="name">Team report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">report.month</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

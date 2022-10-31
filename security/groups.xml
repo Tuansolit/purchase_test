@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="module_test_purchase" model="ir.module.category">
+        <field name="name">Test_purchase</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="module_test_purchase_category_user" model="ir.module.category">
+        <field name="name">Test_purchase</field>
+        <field name="parent_id" ref="module_test_purchase"/>
+        <field name="description">Helps you handle application</field>
+        <field name="sequence">10</field>
+    </record>
+    <record id="nhan_vien_mua_hang_group_user" model="res.groups">
+        <field name="name">Nhân viên mua hàng</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="category_id" ref="module_test_purchase_category_user"/>
+    </record>
+
+    <record id="ke_toan_vien_group_user" model="res.groups">
+        <field name="name">Kế toán viên</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="category_id" ref="module_test_purchase_category_user"/>
+        <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_admin'))]"/>
+    </record>
+
+</odoo>

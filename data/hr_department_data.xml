@@ -1,0 +1,20 @@
+<odoo>
+
+    <data>
+        <record id="department_phong_sx" model="hr.department">
+            <field name="name">Phòng sản xuất</field>
+        </record>
+
+        <record id="department_phong_it" model="hr.department">
+            <field name="name">Phòng IT</field>
+        </record>
+
+        <record id="sale_order_limit_1" model="sale.order.limit">
+            <field name="name">Limit</field>
+        </record>
+<!--        <record id="report_month_1" model="report.month">-->
+<!--            <field name="name">Spending</field>-->
+<!--        </record>-->
+    </data>
+
+</odoo>

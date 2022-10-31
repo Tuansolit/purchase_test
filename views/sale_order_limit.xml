@@ -1,0 +1,47 @@
+<odoo>
+    <record id="sale_limit_tree_view" model="ir.ui.view">
+        <field name="name">sale limit tree</field>
+        <field name="model">sale.order.limit</field>
+        <field name="arch" type="xml">
+            <form string="Report">
+                <sheet>
+                    <field
+                            name="agent_ids"
+                            widget="one2many"
+                            mode="tree"
+                    >
+                        <tree
+                                string="Sales Order Lines"
+                                editable="bottom"
+                        >
+                            <field name="agent_id"/>
+                            <field name="limit" widget="monetary"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sale_limit_act_window" model="ir.actions.act_window">
+        <field name="name">sale limit</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.order.limit</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_sale_limit" model="ir.actions.server">
+        <field name="name">Sale Limit Report</field>
+        <field name="model_id" ref="model_sale_order_limit"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_view_sale_limit()
+        </field>
+    </record>
+
+    <act_window id="sale_limit_report" name="Sale Limit Report" res_model="sale.order.limit" view_mode="form"
+                target="new"/>
+    <menuitem id="sale_order_limit_menu"
+              parent="purchase.menu_purchase_root"
+              action="action_sale_limit"/>
+</odoo>
